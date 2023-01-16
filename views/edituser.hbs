@@ -1,0 +1,43 @@
+<h3>Edit Student Details</h3>
+
+{{#if msg}}
+<div class="alert">{{msg}}</div>
+{{/if}}
+{{#each rows}}
+<form method="post" action="/edituser/{{this.id}}"
+autocomplete="false">
+<div class="form-group">
+    <label for = "firstname">Firstname</label>
+    <input type = "text" name="firstname" value="{{this.firstname}}">
+</div>
+<div class="form-group">
+    <label for = "lastname">Lastname</label>
+        <input type = "text" name="lastname" value="{{this.lastname}}">
+
+</div>
+<div class="form-group">
+    <label for = "location">Location</label>
+        <input type = "text" name="location" value="{{this.location}}">
+
+</div>
+<div class="form-group">
+    <label for = "email">Email</label>
+        <input type = "text" name="email" value="{{this.email}}">
+
+</div>
+<div class="form-group">
+    <label for = "dob">DOB</label>
+        <input type = "date" name="dob" value="{{this.dob}}">
+
+</div>
+<div class="form-group">
+    <label for = "education">Education</label>
+        <input type = "text" name="education" value="{{this.education}}">
+
+</div>
+<div class="form-group">
+    <button type="submit">Save Changes</button>
+    <a href="/">View All</a>
+</div>
+</form>
+{{/each}}
